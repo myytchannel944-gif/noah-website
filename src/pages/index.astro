@@ -5,12 +5,15 @@ const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
 ---
 
 <Layout title={name}>
+  <div class="enter-screen" id="enter-screen">
+    <button class="enter-button" id="enter-button" type="button">
+      enter
+    </button>
+    <span>sound on</span>
+  </div>
+
   <div class="home-wrap">
     <h1>{name}</h1>
-
-    <div class="tagline">
-      streamer and self-taught developer
-    </div>
 
     <div class="roles">
       <span class="pill">Moderator</span>
@@ -44,4 +47,27 @@ const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
   <div class="home-footer">
     &#169; 2026 {name}. All rights reserved.
   </div>
+
+  <audio id="intro-audio" src="/audio/evil-jordan.mp3" preload="auto" data-start="0"></audio>
+
+  <script>
+    const enterScreen = document.querySelector('#enter-screen');
+    const enterButton = document.querySelector('#enter-button');
+    const introAudio = document.querySelector('#intro-audio');
+
+    enterButton?.addEventListener('click', async () => {
+      if (introAudio instanceof HTMLAudioElement) {
+        introAudio.currentTime = Number(introAudio.dataset.start || 0);
+        introAudio.volume = 0.55;
+
+        try {
+          await introAudio.play();
+        } catch {
+          enterButton.textContent = 'audio missing';
+        }
+      }
+
+      enterScreen?.classList.add('is-hidden');
+    });
+  </script>
 </Layout>

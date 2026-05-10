@@ -26,6 +26,7 @@ const { bodyClass = 'home-page' } = Astro.props;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
       }
 
       .home-wrap {
@@ -33,6 +34,8 @@ const { bodyClass = 'home-page' } = Astro.props;
         max-width: 720px;
         padding: 20px;
         animation: fade 1s ease-out;
+        position: relative;
+        z-index: 1;
       }
 
       .home-wrap h1 {
@@ -138,6 +141,56 @@ const { bodyClass = 'home-page' } = Astro.props;
         font-size: 0.85rem;
         color: #444;
         width: 100%;
+        z-index: 1;
+      }
+
+      .enter-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(145, 70, 255, 0.18), transparent 34%),
+          rgba(5, 5, 5, 0.96);
+        transition: opacity 0.35s ease, visibility 0.35s ease;
+      }
+
+      .enter-screen.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .enter-screen span {
+        position: absolute;
+        bottom: 32px;
+        color: #555;
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .enter-button {
+        width: 120px;
+        height: 120px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 999px;
+        color: #f4f4f4;
+        background: rgba(255, 255, 255, 0.04);
+        font: inherit;
+        font-size: 1rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: 0.2s ease;
+        box-shadow: 0 0 80px rgba(145, 70, 255, 0.22);
+      }
+
+      .enter-button:hover {
+        transform: scale(1.05);
+        border-color: rgba(255, 255, 255, 0.32);
+        background: rgba(145, 70, 255, 0.16);
       }
 
       .inner-wrap {
