@@ -3,6 +3,16 @@ import Layout from '../layouts/Layout.astro';
 
 const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
 const twitchName = 'timmyandshawnskid';
+const modChannels = [
+  { name: 'TimmySudo', category: 'Just Chatting', status: '11' },
+  { name: 'Flangohere', category: 'Just Chatting', status: 'Offline' },
+  { name: 'giggalazer', category: 'ROBLOX', status: 'Offline' },
+  { name: 'ItsMspro', category: 'Just Chatting', status: 'Offline' },
+  { name: 'kreak67', category: 'Minecraft', status: 'Offline' },
+  { name: 'THEOFFICIALMP3', category: 'EA Sports College Football 26', status: 'Offline' },
+  { name: 'theyungbreaker', category: 'Just Chatting', status: 'Offline' },
+  { name: 'YooAtem', category: 'Just Chatting', status: 'Offline' },
+];
 ---
 
 <Layout title={`Twitch \u2022 ${name}`} bodyClass="inner-page">
@@ -33,12 +43,14 @@ const twitchName = 'timmyandshawnskid';
 
     <h2 class="section-title">mod for</h2>
     <div class="grid">
-      <a href="https://www.twitch.tv/timmysudo" target="_blank" class="card-link">
-        <div class="card">
-          <h3>TimmySudo</h3>
-          <p>Moderator support, stream help, and community tools.</p>
-        </div>
-      </a>
+      {modChannels.map((channel) => (
+        <a href={`https://www.twitch.tv/${channel.name.toLowerCase()}`} target="_blank" class="card-link">
+          <div class="card">
+            <h3>{channel.name}</h3>
+            <p>{channel.category} • {channel.status}</p>
+          </div>
+        </a>
+      ))}
     </div>
 
     <h2 class="section-title">following</h2>
