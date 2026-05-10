@@ -1,13 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
 ---
 
-<Layout title="About">
-  <h1 class="text-4xl font-bold mb-6">About</h1>
+<Layout title={`About \u2022 ${name}`} bodyClass="inner-page">
+  <div class="inner-wrap">
+    <div class="top">
+      <a class="back" href="/">&#8592; back</a>
+    </div>
 
-  <p class="opacity-80 leading-relaxed">
-    I'm Noah — a developer and creator building tools and experiences across Twitch,
-    Discord, and the web. I focus on clean design, automation, and building things
-    that feel smooth and effortless.
-  </p>
+    <h1>about me</h1>
+    <div class="sub">
+      streamer and self-taught developer
+    </div>
+
+    <p class="about-copy">
+      I'm {name}, a moderator, Twitch expert, and code expert building useful stuff for streams,
+      communities, and the web. I like clean tools, smooth stream setups, and projects that make
+      everything feel easier for creators and viewers.
+    </p>
+
+    <div class="detail-list">
+      <div class="detail">
+        <span>Twitch</span>
+        <strong>timmyandshawnskid</strong>
+      </div>
+      <div class="detail">
+        <span>Discord</span>
+        <strong>noahisontopfr</strong>
+      </div>
+      <div class="detail">
+        <span>Skills</span>
+        <strong>Moderation, Twitch, code</strong>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&#169; 2026 {name}. All rights reserved.</p>
+    </div>
+  </div>
 </Layout>

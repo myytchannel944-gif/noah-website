@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
+const twitchName = 'timmyandshawnskid';
+---
+
+<Layout title={`Twitch \u2022 ${name}`} bodyClass="inner-page">
+  <div class="inner-wrap">
+    <div class="top">
+      <a class="back" href="/">&#8592; back</a>
+    </div>
+
+    <h1>twitch</h1>
+    <div class="sub">
+      Follow the stream, check the profile, and keep track of the channels around the community.
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-row">
+        <div class="avatar">T</div>
+        <div>
+          <h2>@{twitchName}</h2>
+          <p>Streamer, moderator, Twitch expert, and code expert.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <a class="button" href={`https://www.twitch.tv/${twitchName}`} target="_blank">Follow on Twitch</a>
+      <a class="button secondary" href={`https://www.twitch.tv/${twitchName}/about`} target="_blank">View About</a>
+    </div>
+
+    <h2 class="section-title">mod for</h2>
+    <div class="grid">
+      <a href="https://www.twitch.tv/timmysudo" target="_blank" class="card-link">
+        <div class="card">
+          <h3>TimmySudo</h3>
+          <p>Moderator support, stream help, and community tools.</p>
+        </div>
+      </a>
+    </div>
+
+    <h2 class="section-title">following</h2>
+    <div class="grid">
+      <a href="https://www.twitch.tv/timmysudo" target="_blank" class="card-link">
+        <div class="card">
+          <h3>TimmySudo</h3>
+          <p>Featured channel and main community connection.</p>
+        </div>
+      </a>
+      <a href={`https://www.twitch.tv/${twitchName}`} target="_blank" class="card-link">
+        <div class="card">
+          <h3>@{twitchName}</h3>
+          <p>Your Twitch home base. Follow here for streams and updates.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>&#169; 2026 {name}. All rights reserved.</p>
+    </div>
+  </div>
+</Layout>

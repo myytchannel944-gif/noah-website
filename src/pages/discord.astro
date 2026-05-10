@@ -1,11 +1,53 @@
-<!doctype html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=https://discord.gg/9YAzwd5paG" />
-  </head>
-  <body>
-    <script>
-      window.location.href = 'https://discord.gg/9YAzwd5paG';
-    </script>
-  </body>
-</html>
+---
+import Layout from '../layouts/Layout.astro';
+
+const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
+const discordName = 'noahisontopfr';
+---
+
+<Layout title={`Discord \u2022 ${name}`} bodyClass="inner-page">
+  <div class="inner-wrap">
+    <div class="top">
+      <a class="back" href="/">&#8592; back</a>
+    </div>
+
+    <h1>discord</h1>
+    <div class="sub">
+      Add me on Discord for stream talk, bot ideas, code help, and community stuff.
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-row">
+        <div class="avatar">N</div>
+        <div>
+          <h2>{discordName}</h2>
+          <p>Discord profile for {name}. Moderator, Twitch expert, and code expert.</p>
+        </div>
+      </div>
+
+      <div class="detail-list">
+        <div class="detail">
+          <span>Username</span>
+          <strong>{discordName}</strong>
+        </div>
+        <div class="detail">
+          <span>Status</span>
+          <strong>Open for Twitch and code talk</strong>
+        </div>
+        <div class="detail">
+          <span>Profile</span>
+          <strong>Streamer helper</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <a class="button" href="https://discord.com/users/@me" target="_blank">Open Discord</a>
+      <a class="button secondary" href="/">Back Home</a>
+    </div>
+
+    <div class="footer">
+      <p>&#169; 2026 {name}. All rights reserved.</p>
+    </div>
+  </div>
+</Layout>

@@ -30,7 +30,7 @@ const { bodyClass = 'home-page' } = Astro.props;
 
       .home-wrap {
         text-align: center;
-        max-width: 600px;
+        max-width: 720px;
         padding: 20px;
         animation: fade 1s ease-out;
       }
@@ -56,6 +56,23 @@ const { bodyClass = 'home-page' } = Astro.props;
         line-height: 1.6;
       }
 
+      .home-wrap .roles {
+        margin: 18px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .pill {
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 999px;
+        color: #d7d7d7;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 8px 13px;
+        font-size: 0.84rem;
+      }
+
       .home-wrap .links {
         margin-top: 45px;
       }
@@ -69,6 +86,37 @@ const { bodyClass = 'home-page' } = Astro.props;
 
       .home-wrap .links a:hover {
         color: white;
+      }
+
+      .featured-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 44px;
+      }
+
+      .mini-card {
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.025);
+        border-radius: 10px;
+        padding: 14px;
+        text-align: left;
+      }
+
+      .mini-card span {
+        display: block;
+        color: #777;
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .mini-card strong {
+        display: block;
+        margin-top: 7px;
+        color: #f1f1f1;
+        font-size: 0.95rem;
+        font-weight: 500;
       }
 
       @keyframes fade {
@@ -182,6 +230,43 @@ const { bodyClass = 'home-page' } = Astro.props;
         cursor: pointer;
       }
 
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 28px 0 56px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border-radius: 8px;
+        padding: 0 16px;
+        color: #fff;
+        background: #9146ff;
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 600;
+        transition: 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: #a970ff;
+      }
+
+      .button.secondary {
+        color: #d8d8d8;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .button.secondary:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
       .card-row {
         display: flex;
         align-items: center;
@@ -208,6 +293,112 @@ const { bodyClass = 'home-page' } = Astro.props;
         color: #666;
         text-transform: uppercase;
         letter-spacing: 1px;
+      }
+
+      .profile-card {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 22px;
+        background: linear-gradient(135deg, rgba(145, 70, 255, 0.14), rgba(255, 255, 255, 0.025));
+      }
+
+      .profile-row {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .avatar {
+        width: 76px;
+        height: 76px;
+        flex: 0 0 auto;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background:
+          linear-gradient(135deg, rgba(145, 70, 255, 0.95), rgba(35, 211, 171, 0.88)),
+          #222;
+        box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+      }
+
+      .profile-card h2,
+      .profile-card p {
+        margin: 0;
+      }
+
+      .profile-card h2 {
+        font-size: 1.35rem;
+        font-weight: 600;
+      }
+
+      .profile-card p {
+        margin-top: 6px;
+        color: #9b9b9b;
+        line-height: 1.5;
+      }
+
+      .detail-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .detail {
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 10px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.025);
+      }
+
+      .detail span {
+        display: block;
+        color: #777;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .detail strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      .about-copy {
+        max-width: 680px;
+        color: #a7a7a7;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 640px) {
+        .home-wrap h1 {
+          font-size: 3rem;
+        }
+
+        .home-wrap .links {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 14px;
+        }
+
+        .home-wrap .links a {
+          margin: 0;
+        }
+
+        .featured-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
       }
     </style>
   </head>
