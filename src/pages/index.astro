@@ -32,6 +32,7 @@ const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
           <a href="/projects">View Work</a>
           <a href="/twitch">Twitch</a>
           <a href="/discord">Discord</a>
+          <a href="/account">Login</a>
           <a href="/about">About</a>
         </div>
       </div>
@@ -99,6 +100,11 @@ const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
     const enterScreen = document.querySelector('#enter-screen');
     const enterButton = document.querySelector('#enter-button');
     const introAudio = document.querySelector('#intro-audio');
+    const hasEntered = sessionStorage.getItem('site-entered') === 'true';
+
+    if (hasEntered) {
+      enterScreen?.classList.add('is-hidden');
+    }
 
     enterButton?.addEventListener('click', async () => {
       if (introAudio instanceof HTMLAudioElement) {
@@ -112,6 +118,7 @@ const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
         }
       }
 
+      sessionStorage.setItem('site-entered', 'true');
       enterScreen?.classList.add('is-hidden');
     });
   </script>
