@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
+---
+
+<Layout title={name}>
+  <div class="home-wrap">
+    <h1>{name}</h1>
+
+    <div class="tagline">
+      streamer and self-taught developer
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/itsbr0dyy">GitHub</a>
+      <a href="https://twitch.tv/itsbr0dyy">Twitch</a>
+      <a href="/discord">Discord</a>
+      <a href="/projects">Projects</a>
+      <a href="/donate">Donate</a>
+      <a href="https://twitter.com/itsbr0dyy">Twitter</a>
+    </div>
+  </div>
+
+  <div class="home-footer">
+    © 2026 {name}. All rights reserved.
+  </div>
+</Layout>

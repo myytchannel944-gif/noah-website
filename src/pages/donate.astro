@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const name = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
+---
+
+<Layout title={`Donate • ${name}`} bodyClass="inner-page">
+  <div class="inner-wrap">
+    <div class="top">
+      <a class="back" href="/">← back</a>
+    </div>
+
+    <h1>donation</h1>
+    <div class="sub">
+      I accept these forms of donations or tipping (StreamElements tipping getting worked on)
+    </div>
+
+    <div class="grid">
+      <a href="https://twitch.tv/itsbr0dyy" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-row">
+            <img src="/assets/sub.avif" class="icon" alt="" />
+            <div>
+              <h3>Twitch Subs</h3>
+              <p>Support me by gifting or subscribing to my Twitch!</p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://twitch.tv/itsbr0dyy" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-row">
+            <img src="/assets/bits.avif" class="icon" alt="" />
+            <div>
+              <h3>Twitch Bits</h3>
+              <p>Support me by giving bits on my Twitch!</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 {name}. All rights reserved.</p>
+    </div>
+  </div>
+</Layout>
