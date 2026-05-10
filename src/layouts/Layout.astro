@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions';
+
 const defaultTitle = '\u{1D593}\u{1D594}\u{1D586}\u{1D58D}\u30B7\u2671';
 const { title = defaultTitle } = Astro.props;
 const { bodyClass = 'home-page' } = Astro.props;
@@ -11,6 +13,7 @@ const { bodyClass = 'home-page' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" href="/assets/favicon.ico" type="image/webp" />
+    <ClientRouter />
 
     <style is:global>
       body {
@@ -457,6 +460,7 @@ const { bodyClass = 'home-page' } = Astro.props;
   </head>
 
   <body class={bodyClass}>
+    <audio id="intro-audio" src="/audio/evil-jordan.mp3" preload="auto" data-start="0" transition:persist></audio>
     <slot />
   </body>
 </html>
